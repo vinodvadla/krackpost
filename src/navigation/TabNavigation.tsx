@@ -10,18 +10,13 @@ const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-    <SafeAreaView style={{flex:1,backgroundColor:COLORS.background}}>
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={{ headerShown: false }}
-        tabBar={props => <CustomTabBar {...props} />}
-      >
-        <Tab.Screen name="Leader" children={() => <Profile />} />
-        <Tab.Screen name="Poster" children={() => <Profile />} />
-        <Tab.Screen name="Profile" children={() => <Profile />} />
-      </Tab.Navigator>
-    </NavigationContainer>
-    </SafeAreaView>
-
+    <Tab.Navigator
+      screenOptions={{ headerShown: false }}
+      tabBar={props => <CustomTabBar {...props} />}
+    >
+      <Tab.Screen name="Leader" children={() => <Profile />} />
+      <Tab.Screen name="Poster" children={() => <Profile />} />
+      <Tab.Screen name="Profile" children={() => <Profile />} />
+    </Tab.Navigator>
   );
 }

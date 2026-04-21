@@ -4,6 +4,7 @@ import {
 } from 'react-native-safe-area-context';
 import TabNavigation from './src/navigation/TabNavigation';
 import Profile from './src/screens/Profile';
+import StackNavigation from './src/navigation/StackNavigation';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -11,7 +12,7 @@ function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <TabNavigation/>
+     <StackNavigation/>
     </SafeAreaProvider>
   );
 }

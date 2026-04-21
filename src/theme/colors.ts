@@ -1,6 +1,6 @@
 export const COLORS = {
   // 🤍 Base
-  background: '#FFFFFF',
+  background: '#FBF4E9',
   surface: '#FFF9F0', // soft warm ivory (prevents harsh white UI)
 
   // 🎯 Brand

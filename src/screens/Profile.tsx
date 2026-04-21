@@ -8,7 +8,7 @@ import {
   StatusBar,
   ImageBackground,
 } from 'react-native';
-import { ArrowLeft, Pencil, Camera, Crown } from 'lucide-react-native';
+import { Pencil, Camera, Crown } from 'lucide-react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import ContactInfoCard from '../components/ContactInfoCard';
 import ProfileBtn from '../components/ProfileBtn';
@@ -18,6 +18,8 @@ import { IMAGES } from '../theme/images';
 import Save from '../assets/svgs/Save.js';
 import BriefCase from '../assets/svgs/BriefCase.js';
 import Lock from '../assets/svgs/Lock.js';
+import Header from '../components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 export const btnsData: any = [
   {
@@ -43,6 +45,11 @@ export const btnsData: any = [
 ];
 
 const ProfileScreen = () => {
+  const navigation = useNavigation<any>();
+  const handlePlanPress = () => {
+    navigation.navigate('Plans');
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.background }}>
       <StatusBar
@@ -50,14 +57,11 @@ const ProfileScreen = () => {
         backgroundColor="transparent"
         barStyle="light-content"
       />
-      <View style={styles.header}>
-        <TouchableOpacity>
-          <ArrowLeft color="#BB9B49" size={24} />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.editBtn}>
-          <Pencil color="#BB9B49" size={18} />
-        </TouchableOpacity>
-      </View>
+      <Header
+        showBack={true}
+        showRightIcon={true}
+        rightIcon={<Pencil color="#BB9B49" size={18} />}
+      />
       <View
         style={{
           width: '100%',
@@ -94,7 +98,11 @@ const ProfileScreen = () => {
             colors={['#EBD197', '#B48811', '#A2790D', '#BB9B49']}
             style={styles.planBtn}
           >
-            <TouchableOpacity activeOpacity={0.8} style={styles.planContent}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={styles.planContent}
+              onPress={handlePlanPress}
+            >
               <Crown size={14} color="#000" style={{ marginRight: 6 }} />
               <Text style={styles.planText}>Pro</Text>
             </TouchableOpacity>
