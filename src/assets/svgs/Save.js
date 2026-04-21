@@ -11,12 +11,19 @@ function SvgComponent(props) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <Defs>
+      {/* <Defs>
         <LinearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
           <Stop offset="0%" stopColor="#EBD197" />
           <Stop offset="50%" stopColor="#B48811" />
           <Stop offset="51%" stopColor="#A2790D" />
           <Stop offset="100%" stopColor="#BB9B49" />
+        </LinearGradient>
+      </Defs> */}
+      <Defs>
+        <LinearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <Stop offset="0%" stopColor="#7A2434" />
+          <Stop offset="50%" stopColor="#551823" />
+          <Stop offset="100%" stopColor="#3A0F18" />
         </LinearGradient>
       </Defs>
       <Path

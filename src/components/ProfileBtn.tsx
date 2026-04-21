@@ -64,9 +64,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,107,107,0.15)',
   },
   text: {
-    color: COLORS.textPrimary,
-    fontSize: 15,
-    fontWeight: '500',
+    color: COLORS.textSecondary,
+    fontSize: 14,
+    fontWeight: '700',
   },
   dangerText: {
     color: '#ff6b6b',

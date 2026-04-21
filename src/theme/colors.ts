@@ -1,30 +1,46 @@
 export const COLORS = {
-  // Base
-  background: "#0C0D0B",
-  gold: "#B48811",
+  // 🤍 Base
+  background: '#FFFFFF',
+  surface: '#FFF9F0', // soft warm ivory (prevents harsh white UI)
 
-  // ✨ Primary Text (Headings)
-  textPrimary: "#F6E2BD",   // soft premium gold-white
+  // 🎯 Brand
+  primary: '#621E29', // deep wine (buttons, headers, active states)
+  gold: '#EEB659', // luxury accent
 
-  // 📝 Secondary Text (subtitles, labels)
-  textSecondary: "#D6C29A", // muted gold
+  // ✨ Text System
+  textPrimary: '#1A1A1A', // main readable text
+  textSecondary: '#621E29', // brand-tinted headings
+  textTertiary: '#8A6B6F', // muted supporting text
+  textMuted: '#B9A6A8', // subtle hints / placeholders
+  textDisabled: '#D8C9CB', // disabled states
 
-  // 📄 Tertiary Text (less important info)
-  textTertiary: "#AFA58A",  // desaturated warm gray
+  // 🔥 Highlights
+  textAccent: '#EEB659', // interactive highlight (links, badges)
 
-  // 🔕 Disabled / Hint text
-  textDisabled: "#6F6A5E",
+  // ⚠️ Status
+  textDanger: '#D64545',
 
-  // 🔥 Highlight / Accent text
-  textGold: "#E6C36A",      // brighter gold highlight
+  // 🧱 Borders
+  borderPrimary: 'rgba(98, 30, 41, 0.15)', // soft wine border
+  borderGold: 'rgba(238, 182, 89, 0.35)', // premium highlight border
+  borderSoft: 'rgba(0,0,0,0.06)',
 
-  // ⚠️ Danger
-  textDanger: "#FF6B6B",
+  // 🌫 Surfaces / Cards
+  card: '#FFFFFF',
+  cardElevated: '#FFF4E6', // warm luxury card tint
 
-  // 🟫 Borders / subtle UI
-  borderGold: "rgba(180,136,17,0.35)",
+  // ✨ Glass / Soft overlays (light UI style)
+  glassLight: 'rgba(255, 255, 255, 0.7)',
+  glassWarm: 'rgba(238, 182, 89, 0.08)',
 
-  // 🌫 Glass backgrounds
-  glassLight: "rgba(255,255,255,0.05)",
-  glassDark: "rgba(0,0,0,0.4)",
+  // 🎯 UI States
+  hover: 'rgba(98, 30, 41, 0.05)',
+  pressed: 'rgba(98, 30, 41, 0.1)',
+
+  tabBar: '#FFFFFF', // main tab background
+  tabBarElevated: '#FFF9F0', // subtle warm lift (matches surface tone)
+  tabBarBorder: 'rgba(98, 30, 41, 0.08)', // soft wine separation line
+  tabBarShadow: 'rgba(0, 0, 0, 0.06)', // soft elevation shadow
+  tabBarActive: '#621E29', // active icon/text (brand wine)
+  tabBarInactive: '#B9A6A8', // inactive muted state
 };

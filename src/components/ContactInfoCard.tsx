@@ -1,45 +1,21 @@
-import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, Easing } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { COLORS } from '../theme/colors';
 
 const ContactInfoCard = () => {
-  const shimmerAnim = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    Animated.loop(
-      Animated.timing(shimmerAnim, {
-        toValue: 1,
-        duration: 2600,
-        easing: Easing.linear,
-        useNativeDriver: true,
-      }),
-    ).start();
-  }, []);
-
-  const translateX = shimmerAnim.interpolate({
-    inputRange: [0, 1],
-    outputRange: [-150, 250],
-  });
-
   return (
     <View style={styles.wrapper}>
+      {/* 🎯 Premium Gradient Border (static) */}
       <LinearGradient
-        colors={['#B48811', '#EBD197', '#B48811']}
+        colors={[
+          'rgba(238, 182, 89, 0.8)',
+          'rgba(98, 30, 41, 0.25)',
+          'rgba(238, 182, 89, 0.8)',
+        ]}
         style={styles.borderGradient}
       >
-        {/* ✨ SHIMMER */}
-        <Animated.View
-          pointerEvents="none"
-          style={[styles.shimmer, { transform: [{ translateX }] }]}
-        >
-          <LinearGradient
-            colors={['transparent', 'rgba(255,255,255,0.35)', 'transparent']}
-            style={styles.shimmerInner}
-          />
-        </Animated.View>
-
-        {/* 🧱 CONTENT */}
+        {/* 🧱 Inner Card */}
         <View style={styles.container}>
           {/* ROW 1 */}
           <View style={styles.row}>
@@ -86,32 +62,18 @@ const styles = StyleSheet.create({
   borderGradient: {
     borderRadius: 20,
     padding: 1.2,
-    overflow: 'hidden',
   },
 
   container: {
     borderRadius: 20,
     paddingVertical: 16,
     paddingHorizontal: 14,
-    backgroundColor: 'rgba(12,13,11,0.96)',
-  },
-
-  shimmer: {
-    position: 'absolute',
-    width: 100,
-    height: '100%',
-    top: 0,
-    left: 0,
-  },
-
-  shimmerInner: {
-    flex: 1,
-    opacity: 0.35,
+    backgroundColor: COLORS.card,
   },
 
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // 🔥 key fix
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
 
@@ -129,20 +91,22 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    color: COLORS.textGold,
+    color: COLORS.textTertiary,
     fontSize: 11,
     marginBottom: 3,
     letterSpacing: 0.3,
+    fontWeight: '500',
   },
 
   value: {
-    color: COLORS.textPrimary,
+    color: COLORS.textSecondary,
     fontSize: 14,
-    fontWeight: '500',
+    fontWeight: '700',
   },
+
   divider: {
     height: 1,
-    backgroundColor: 'rgba(180,136,17,0.25)',
+    backgroundColor: COLORS.borderSoft,
     marginVertical: 10,
   },
 });
