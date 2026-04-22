@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  StatusBar,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Text, StatusBar, StyleSheet } from 'react-native';
 import React from 'react';
 import { COLORS } from '../theme/colors';
 import SecondaryHeader from '../components/SecondaryHeader';
@@ -62,7 +56,9 @@ const Plans = ({ navigation }: Props) => {
             </LinearGradient>
             <View>
               <Text style={styles.featureText}>1 Photo + 1 Video</Text>
-              <Text style={styles.featureSub}>Per member/ day</Text>
+              <Text style={[styles.featureSub, { color: '#fff' }]}>
+                Per member/ day
+              </Text>
             </View>
           </View>
         </LinearGradient>
@@ -75,7 +71,7 @@ const Plans = ({ navigation }: Props) => {
           <View style={styles.dividerLight} />
           <View style={styles.row}>
             <View style={styles.iconCircleLight}>
-              <Image color={COLORS.primary} size={22}  />
+              <Image color={COLORS.primary} size={22} />
             </View>
             <View>
               <Text style={styles.featureTextDark}>2 Photos + 2 Videos</Text>
@@ -92,7 +88,16 @@ const Plans = ({ navigation }: Props) => {
           <View style={styles.dividerLight} />
           <View style={styles.row}>
             <View style={styles.iconCircleLight}>
-              <Text style={{ fontSize: 20, color: COLORS.primary,marginBottom:5 ,fontWeight:'800'}}>∞</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: COLORS.primary,
+                  marginBottom: 5,
+                  fontWeight: '800',
+                }}
+              >
+                ∞
+              </Text>
             </View>
             <View>
               <Text style={styles.featureTextDark}>Unlimited</Text>
@@ -139,19 +144,19 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   activeCard: {
-    backgroundColor: COLORS.primary,
     borderRadius: 20,
-    padding: 18,
-    borderWidth: 1.5,
+    padding: 20,
+    borderWidth: 1,
     borderColor: COLORS.gold,
-    shadowColor: COLORS.gold,
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 12,
     },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 6,
+    shadowOpacity: 0.58,
+    shadowRadius: 16.0,
+
+    elevation: 24,
   },
   card: {
     backgroundColor: COLORS.surface,
